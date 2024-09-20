@@ -1,0 +1,90 @@
+data-path="/home/node2/besu/QBFT-Network/Node2/data"
+# This is the datapath where the blockchain data will be stored
+network-id=1337
+genesis-file="/home/node2/besu/QBFT-Network/genesis.json"
+# Network
+bootnodes=[
+    "enode://9cad324c8e0f6e4fefcfb4b7272af1f3a6abe873bc5b61dffdc0381078ea460f9c08a0d9c0c6450db52be9cf3b0579229dfb3f04fd3e4c03ffeaaf05045163bb@10.102.196.101:30303",
+    "enode://14fc8ee66d9573d75eed631d6759733d5995230649469b7233b949714d1f938eabc1eeda0c2c99909b96898ef4818368094f5333209f0b3beca9d771c990e34c@10.102.196.102:30303",
+    "enode://78c3b4b33b31770af5412689ae05754d5639444826de7f604ae10acbd025034fc419cf33622a59ba0f8d3f3e5e3696929e4d74ba3ebf3b53609833789def6cf7@10.102.196.100:30303",
+    "enode://268cfe3db5f98eaf69331d2cf5e2f21ff0f22a5471ef67226ca2a03d7fad53ab4187ef2620d278a6c21aa0d1ddfc26f68b4477af4f055f3350540d999d74ea2f@10.102.196.103:30303"
+]
+# allows for the bootnodes to discover each other as they start up. In
+# this example, there are three bootnodes stipulated for this network
+
+#P2P
+p2p-host="10.102.196.100"
+p2p-interface="0.0.0.0"
+p2p-port=30303
+discovery-enabled=true
+remote-connections-limit-enabled=true
+remote-connections-max-percentage=60
+random-peer-priority-enabled=false
+host-allowlist=["*"]
+engine-host-allowlist=["*"]
+engine-rpc-enabled=true
+#engine-jwt-disabled=true
+#max-peers=42
+# SYNC
+#sync-mode="FAST"
+#fast-sync-min-peers=3
+
+# Database
+data-storage-format="FOREST"
+
+max-peers=42
+# The maximum number of peer to peer connections this network can
+
+# JSON-RPC
+rpc-http-host="10.102.196.100"
+rpc-http-port=8545
+rpc-ws-enabled=true
+rpc-ws-host="10.102.196.100"
+rpc-ws-port=9001
+rpc-http-api=["ETH","NET","WEB3","IBFT","ADMIN"]
+rpc-http-enabled=true
+rpc-http-cors-origins=["*"]
+
+# GRAPHQL-RPC
+graphql-http-enabled=true
+graphql-http-host="10.102.196.100"
+graphql-http-port=10001
+graphql-http-cors-origins=["*"]
+# Transaction Pool
+tx-pool="layered"
+tx-pool-price-bump=13
+tx-pool-blob-price-bump=100
+rpc-tx-feecap=200000
+#strict-tx-replay-protection-enabled=true
+tx-pool-no-local-priority=false
+tx-pool-priority-senders=["0xfe3b557e8fb62b89f4916b721be55ceb828dbd73","0x627306090abaB3A6e1400e9345bC60c78a8BEf57"]
+tx-pool-enable-save-restore=true
+tx-pool-save-file="txpool.dump"
+## Layered
+tx-pool-layer-max-capacity=12345678
+tx-pool-max-prioritized=9876
+tx-pool-max-prioritized-by-type=["BLOB=10","FRONTIER=100"]
+tx-pool-max-future-by-sender=321
+## Legacy/Sequenced
+#tx-pool-retention-hours=999
+#tx-pool-max-size=1234
+#tx-pool-limit-by-account-percentage=0.017
+tx-pool-min-gas-price=1000
+
+miner-enabled=true
+# This option enables mining when the node is started. The type of
+# consensus mechanism will be stipulated in the genesis file
+
+miner-coinbase="0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"
+# miner-coinbase provides the account to which mining rewards will be
+# paid for this blockchain
+
+#TLS-P2P
+Xp2p-tls-enabled=true
+Xp2p-tls-keystore-type="JKS"
+Xp2p-tls-keystore-file="/home/node2/besu/cert/node2-keystore.jks"
+Xp2p-tls-keystore-password-file="/home/node2/besu/cert/password.txt"
+#Xp2p-tls-crl-file="/home/kyo/besu/cert/Node2/crl.pem"
+Xp2p-tls-truststore-type="JKS"
+Xp2p-tls-truststore-file="/home/node2/besu/cert/node2-truststore.jks"
+Xp2p-tls-truststore-password-file="/home/node2/besu/cert/password.txt"
