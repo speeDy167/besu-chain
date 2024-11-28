@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "axios": "^1.7.7",
+    "ethers": "^6.13.4",
+    "keythereum": "^2.0.0",
+    "loglevel": "^1.9.2",
+    "web3": "^4.15.0",
+    "ws": "^8.18.0"
+  }
+}

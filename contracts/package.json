@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "axios": "^1.7.7",
+    "chai": "^5.1.1",
+    "chai-as-promised": "^8.0.0",
+    "truffle-assertions": "^0.9.2",
+    "type": "module"
+  }
+}
