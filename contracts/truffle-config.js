@@ -46,7 +46,7 @@ module.exports = {
     //}
     besu: {
       provider: () => new HDWalletProvider({
-        privateKeys: [ 'ce786ea7284878cb94750044f493fba5bf76854c823655175af5e07755b314e5'], // Your private key
+        privateKeys: [ '8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63'], // Your private key
         providerOrUrl: "http://192.168.169.133:8545",  // Besu node URL
       }),
       network_id: "1337", // Match any network id
